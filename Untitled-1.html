@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificar si un numero es primo</title>
+</head>
+<body>
+	<h1>Verificar si un numero es primo</h1>
+	<p>Ingrese un numero entero:</p>
+	<input type="number" id="numero" />
+	<button onclick="verificarPrimo()">Verificar</button>
+	<p id="resultado"></p>
+	<script type="text/javascript">
+		function esPrimo(numero) {
+			if (numero < 2) {
+				return false;
+			}
+			for (var i = 2; i < numero; i++) {
+				if (numero % i === 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		function verificarPrimo() {
+			var numero = document.getElementById("numero").value;
+			if (esPrimo(numero)) {
+				document.getElementById("resultado").innerHTML = "El número " + numero + " es primo.";
+			} else {
+				document.getElementById("resultado").innerHTML = "El número " + numero + " no es primo.";
+			}
+		}
+	</script>
+</body>
+</html>
